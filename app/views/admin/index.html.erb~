@@ -17,7 +17,7 @@
 <div id="header">
 	<table>
    <tr>
-				<td width="95%"><div class="logo">
+				<td width="96%"><div class="logo">
 							<%= image_tag ("BaobabHealth.png") %>
 				
     <td><div id="sign" ><%= link_to 'Sign Out', 

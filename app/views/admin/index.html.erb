@@ -19,10 +19,9 @@
    <tr>
 				<td width="96%"><div class="logo">
 							<%= image_tag ("BaobabHealth.png") %>
-				
-    <td><div id="sign" ><%= link_to 'Sign Out', 
+				<td><div id="heading">DATA ANALYZER</td>
+    <td><div class="button" id="sign" ><%= button_to 'Sign Out', 
 							{:controller=>"sessions", :action => "destroy"}, :method => :get %></div></td>
-				
  </tr>
 </table>
 </div>

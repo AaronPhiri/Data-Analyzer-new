@@ -21,6 +21,10 @@ body{
  
 	font-family: "Arial Black", Gadget, sans-serif;
 }
+#heading{
+font-size: 25px;
+text-align: center;
+}
 .btn {
   background: #6ab4e6;
   background-image: -webkit-linear-gradient(top, #6ab4e6, #51a9e0);
