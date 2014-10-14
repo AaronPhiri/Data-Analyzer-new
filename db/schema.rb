@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141007174453) do
+ActiveRecord::Schema.define(version: 20141014071615) do
+
+  create_table "application_at_sites", force: true do |t|
+    t.string   "application_at_site_id"
+    t.decimal  "application_id",         precision: 10, scale: 0
+    t.decimal  "site_id",                precision: 10, scale: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "applications", force: true do |t|
+    t.decimal  "application_id",   precision: 10, scale: 0
+    t.string   "application_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "available_systems", force: true do |t|
     t.string   "name"
@@ -21,10 +36,32 @@ ActiveRecord::Schema.define(version: 20141007174453) do
     t.datetime "updated_at"
   end
 
+  create_table "indicator_counts", force: true do |t|
+    t.decimal  "indicator_id", precision: 10, scale: 0
+    t.decimal  "site_id",      precision: 10, scale: 0
+    t.decimal  "result",       precision: 10, scale: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "indicators", force: true do |t|
     t.string   "name"
     t.string   "goal"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "role_name"
+    t.decimal  "role_id",    precision: 10, scale: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sites", force: true do |t|
+    t.decimal  "site_id",    precision: 10, scale: 0
+    t.string   "site_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
