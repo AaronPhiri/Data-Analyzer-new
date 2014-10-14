@@ -1,0 +1,7 @@
+<div id="body"><h1>Hello User</h1>
+<h2>Choose a function to perform<h2>
+<div><%= link_to 'User Mananagement','users' %></div>
+<div><%= link_to 'Indicator Management', 'indicators'%></div>
+
+<div><%= link_to 'Sign Out', 'sessions/destroy'%></div>
+</div>

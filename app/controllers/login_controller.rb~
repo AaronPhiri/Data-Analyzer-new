@@ -1,0 +1,6 @@
+class LoginController < ApplicationController
+  def login
+		name = params[:name]
+		password = params[:password]
+  end
+end
