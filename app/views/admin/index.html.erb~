@@ -1,7 +1,45 @@
-<div id="body"><h1>Hello User</h1>
+<!--  <div id="body"><h1>Hello User</h1>
 <h2>Choose a function to perform<h2>
-<div><%= link_to 'User Mananagement','users' %></div>
-<div><%= link_to 'Indicator Management', 'indicators'%></div>
+<table>
+<tr>
+<td><div class="button"><%= button_to 'User Mananagement',
+	{:controller=> "users", :action => "index"}, :method => :get %></div></td>
 
-<div><%= link_to 'Sign Out', 'sessions/destroy'%></div>
+<td><div class="button"><%= button_to 'Indicator Mananagement',
+{:controller=> "indicators", :action => "index"}, :method => :get %></div></td>
+
+<tr><td colspan="2", align="center"><div class="button"><%= button_to 'Sign Out', 
+{:controller=>"sessions", :action => "destroy"}, :method => :get %></div></td></tr>
+</table>
+</div> -->
+<div id="wholepage">
+
+<div id="header">
+	<table>
+   <tr>
+				<td width="95%"><div class="logo">
+							<%= image_tag ("BaobabHealth.png") %>
+				
+    <td><div id="sign" ><%= link_to 'Sign Out', 
+							{:controller=>"sessions", :action => "destroy"}, :method => :get %></div></td>
+				
+ </tr>
+</table>
+</div>
+<table align="center">
+<tr>	
+		<td><div class="box" id="box1" onclick="window.location.href='users';">
+			<p>Users</p>	
+			</div></td>
+			<td><div class="box" id="box2" onclick="window.location.href='indicators';">
+			<p>Indicators</p>			
+			</div></td>
+		<td><div class="box" id="box3"><p>Available Systems</p></div></td>
+</tr>
+<tr>		
+		<td><div class="box" id="box4"><p>Messages</p></div></td>
+		<td><div class="box" id="box5"><p>Reports</p></div></td>
+		<td><div class="box" id="box6"><p>Locations</p></div></td>
+</tr>
+</table>
 </div>

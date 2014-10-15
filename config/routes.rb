@@ -10,9 +10,13 @@ Rails.application.routes.draw do
 	controller :sessions do
 		get 'login' => :new
 		post 'login' => :login
-		delete 'logout' => :destroy
+		get 'logout' => :destroy
 	end
-	
+	controller :users do
+    get 'have' => :index
+  get 'index' => :have
+
+  end
 	get "sessions/create"
 	get "sessions/destroy"
 
@@ -26,7 +30,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  #  root 'sessions#new'
+  root 'sessions#new'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -2,12 +2,13 @@
 <%if notice%>
 <p id="notice"<%= notice %>></p>
 <% end %>
+<!--
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-			<th></th>
-			<th></th>
+      <th class="border">Name</th>
+			<th class="border">Role</th>
+			<th class="border">Location</th>
 			<th></th>
       <th colspan="3"></th>
     </tr>
@@ -16,15 +17,100 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="border"><%= user.name %></td>
+				<td class="border"><%= user.role %></td>
+				<td class="border"><%= user.location %></td>		
+		
+        <td><div class="btn-1"><%= link_to 'Show', user %></div></td>
+        <td><div class="btn-2"><%= link_to 'Edit', edit_user_path(user) %></div></td>
+        <td><div class="btn-3"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
+			
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<table>
+<tr>
+<td><div class="btn"><%= link_to 'Create User',{:controller=> "users", :action => "new"}, :method => :get %></div></td>
+<td><div class="btn"><%= link_to 'Back',{:controller=> "admin", :action => "index"}, :method => :get %></div></td>
+</tr> -->
 
-<%= link_to 'New User', new_user_path %>
+																<div id="header">
+																				<table>
+																											 <tr>
+																																								<td><div class="logo">
+																																											<%= image_tag ("BaobabHealth.png") %>
+																																												</div>
+																																								</td>
+																										 </tr>
+																			</table>
+																</div>
+       <div id="wholetable">
+<table align="left" >
+<tr>	
+		<td><div class="box" id="box7"  name="inusers">
+		
+         
+														<table class="table">
+																								<thead>
+																													<tr>
+																																	<div class="header">
+																																									<th align="left" >Name</th>
+
+																																									<th align="left" >Role</th>
+																																								 
+																																									<th>Location</th>
+																																 
+																																 
+																																	</div>
+																													</tr>
+																								</thead>
+
+																							<tbody>
+																											 <% @users.each do |user| %>
+																														<tr>
+																																		<td align="left"><%= user.name %></td>
+																																	 
+																																		<td align="left" ><%= user.role %></td>
+
+																															 			<td align="left" ><%= user.location %></td>
+																														</tr>
+																										<% end %>
+																						</tbody>
+
+															</table>
+    </div></td>
+							<td >				<div class="box" id="box8" width="10%">
+												<table ">
+																						<tr >	
+																									<td width="128"><div class="box" id="box10" name="adduser"onclick="window.location.href='users/new';"></div></td>
+		
+																									</tr>
+																									<tr>
+																											<td width="128"><div class="box" id="box12" name="edituser" onclick="window.location.href='users/edit/id='1'';"></div></td>
+		
+																									</tr>
+		
+																								<tr>
+																										<td width="128"><div class="box" id="box14" name="deleteuser" onclick="window.location.href='users/destroy';"></div></td>
+		
+																								</tr>
+                                               <tr>
+																								<td><div class="box" id="box14" name="back" onclick="window.location.href='admin';"></div></td>
+																								</tr>
+												</table>		
+						</div>
+							</td>
+</tr>
+</table>
+</div>
+
+<!-- <table align="center">
+<tr>	
+		<td><div class="box" id="box7"></div></td>
+		<td><div class="box" id="box8"></div></td>
+</tr>
+</table> 
+-->

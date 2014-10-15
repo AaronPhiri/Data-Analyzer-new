@@ -1,0 +1,11 @@
+class CreateAvailableSystems < ActiveRecord::Migration
+  def change
+    create_table :available_systems do |t|
+			t.string: name_of_system
+      t.timestamps:
+			t.string: location
+			t.string: description
+			
+    end
+  end
+end

@@ -1,20 +1,36 @@
+<div id="login">
+<div class="logo">
+	<%= image_tag ("BaobabHealth.png") %>
+</div>
 <div class = "trialApp_form">
 	<% if flash[:alert] %>
-		<p id = "notice"><%flash[:alert]%></p>
+		<p id = "notice"><%=flash[:alert]%></p>
 	<% end %>
 	<%= form_tag("/login", method: "post") do %>
-		<fieldset>
-			<legend>Please Log In</legend>
-			<div>
-				<%= label_tag :name, 'Name:'%>
-				<%= text_field_tag :name, params[:name] %>
+		<div id="field">
+			<fieldset id="fields">
+			<table>
+			<th colspan="2", align="center">Please Log In</th>
+			<div class="form-control">
+				<tr>				
+				<td><%= label_tag :name, 'Name:'%></td>
+				<td><%= text_field_tag :name, params[:name] %></td>
+				</tr>			
+			</div>
+			<div class="form-control">
+			<tr>
+				<td><%= label_tag :password, 'Password:' %></td>
+				<td><%= password_field_tag :password, params[:password]%></td>
+			</tr>			
 			</div>
 			<div>
-				<%= label_tag :password, 'Password:' %>
-				<%= password_field_tag :password, params[:password]%>
-			</div>
-			<div>
-				<%= submit_tag "Login" %>
-			</div>
+				<tr>
+				<%= button_to "New Post", { :action => "new" }, :method => :get %>
+				<td><%= submit_tag "Login" %></td>
+				</tr>
+		</div>
+		</table>			
+		</div>
 	<% end %>
+</div>
 </div>

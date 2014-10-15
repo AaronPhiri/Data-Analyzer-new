@@ -1,0 +1,31 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.trialApp_form{
+	font-family: sans-serif;
+}
+#notice{
+}
+#fields{
+		background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin-bottom: 20px;
+    min-height: 20px;
+    padding: 19px;
+}
+.bs-component{
+	position: relative;
+}
+#login{
+  width:400px;
+	background-color: #CCCCCC;
+	font-size: 15px;
+	border-bottom:auto;
+ 	position:relative;
+  top:250px;
+ 	left:450px;
+	font-family: "Arial Balck", Gadget, sans-serif;
+}
+

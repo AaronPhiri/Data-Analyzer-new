@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<!--<%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -16,16 +16,146 @@
     <%= f.label :name, 'Name' %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+	
+	<div class="field">
+    <%= f.label :role, 'Role' %><br>
+    <%= f.text_field :role %>
+  </div>
+	
+	<div class="field">
+    <%= f.label :location, 'Location' %><br>
+    <%= f.text_field :location %>
+  </div>
+  
+	<div class="field">
     <%= f.label :password, 'Password' %><br>
     <%= f.password_field :password %>
   </div>
-  <div class="field">
+  
+	<div class="field">
     <%= f.label :password_confirmation, 'Confirm' %><br>
     <%= f.password_field :password_confirmation %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 </fieldset>
+<% end %>-->
+<!--start of header--->
+<div id="header">
+																				<table>
+																											 <tr>
+																																								<td><div class="logo">
+																																											<%= image_tag ("BaobabHealth.png") %>
+																																												</div>
+																																								</td>
+																										 </tr>
+																			</table>
+																</div>
+  <!-- end of header-->
+
+<table align="center" width="100%">
+<tr> 
+ <!--start of first table-->	
+		<td><div class="box" id="box7"  name="tablevalue">
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+ <!--error message-->
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<!--end of error message-->
+	<fieldset height="600px">
+	
+  <!--<div class="field">
+    <%= f.label :name, 'Name' %><br>
+    <%= f.text_field :name %>
+  </div>
+	
+	<div class="field">
+    <%= f.label :role, 'Role' %><br>
+    <%= f.text_field :role %>
+  </div>
+	
+	<div class="field">
+    <%= f.label :location, 'Location' %><br>
+    <%= f.text_field :location %>
+  </div>
+  
+	<div class="field">
+    <%= f.label :password, 'Password' %><br>
+    <%= f.password_field :password %>
+  </div>
+  
+	<div class="field">
+    <%= f.label :password_confirmation, 'Confirm' %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>-->
+
+ <table>
+<thead>
+<tr>
+ <th colspan="3"><strong>Please enter user details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="field">
+    <%= f.label :name, 'Name :' %></td><td></td><td>
+    <%= f.text_field :name %>
+  </div></td>
+</tr>
+<br>
+<tr>
+<td><div class="field">
+    <%= f.label :role, 'Role :' %></td><td></td><td>
+    <%= f.text_field :role %>
+  </div>
+	
+  </td>
+</tr>
+<tr>
+<td><div class="field">
+    <%= f.label :location, 'Location :' %></td><td></td><td>
+    <%= f.text_field :location %>
+  </div>
+  </td>
+</tr>
+<tr>
+<td> <div class="field">
+    <%= f.label :password, 'Password :' %></td><td></td><td>
+    <%= f.password_field :password %>
+  </div>
+  </td>
+</tr>
+<tr>
+<td><div class="field">
+    <%= f.label :password_confirmation, 'Confirm :' %></td><td></td><td>
+    <%= f.password_field :password_confirmation %>
+  </div</td>
+</tr>
+
+
+  <tr><td><div class="actions">
+    <%= f.submit%>
+  </div></td><td></td><td><div class="userback"><%= button_to "New Post", { :action => "have" }, :method => :get %></div></td></tr>
+</tbody>
+
+</table>
+</fieldset>
 <% end %>
+</div>
+</tr>
+</table>
+
+
+
+

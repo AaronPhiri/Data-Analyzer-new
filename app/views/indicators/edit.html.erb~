@@ -1,0 +1,6 @@
+<h1>Editing indicator</h1>
+
+<%= render 'form' %>
+
+<div class="button"><%= button_to 'Show',{:controller=> "indicators", :action => "show"}, :method => :get %></div>
+<div class="button"><%= button_to 'Back',{:controller=> "indicators", :action => "index"}, :method => :get %></div>
