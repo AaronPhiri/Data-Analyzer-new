@@ -146,7 +146,7 @@
 
   <tr><td><div class="actions">
     <%= f.submit%>
-  </div></td><td></td><td><div class="userback"><%= button_to "New Post", { :action => "index" }, :method => :get %></div></td></tr>
+  </div></td><td></td><td><div class="userback"><%= button_to "New Post", { :action => "have" }, :method => :get %></div></td></tr>
 </tbody>
 
 </table>

@@ -1,4 +1,4 @@
-
+<h1>Listing users</h1>
 <%if notice%>
 <p id="notice"<%= notice %>></p>
 <% end %>
@@ -35,7 +35,7 @@
 <tr>
 <td><div class="btn"><%= link_to 'Create User',{:controller=> "users", :action => "new"}, :method => :get %></div></td>
 <td><div class="btn"><%= link_to 'Back',{:controller=> "admin", :action => "index"}, :method => :get %></div></td>
-</tr>-->
+</tr> -->
 
 																<div id="header">
 																				<table>
@@ -75,7 +75,7 @@
 																																	 
 																																		<td align="left" ><%= user.role %></td>
 
-																															 			<td align="left" ><%= user.location %></td>
+																															 			<td align="left" ><%= user.site %></td>
 																														</tr>
 																										<% end %>
 																						</tbody>
