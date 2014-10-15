@@ -59,10 +59,7 @@
 																																	<div class="header">
 																																									<th align="left" >Name</th>
 
-																																									<th align="left" >Role</th>
-																																								 
-																																									<th>Location</th>
-																																 
+																																									
 																																 
 																																	</div>
 																													</tr>
@@ -73,9 +70,7 @@
 																														<tr>
 																																		<td align="left"><%= user.name %></td>
 																																	 
-																																		<td align="left" ><%= user.role %></td>
-
-																															 			<td align="left" ><%= user.site %></td>
+																																		<td><%= button_to('Give role')></td>
 																														</tr>
 																										<% end %>
 																						</tbody>
