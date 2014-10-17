@@ -1,55 +1,4 @@
-<!--<h1>Listing indicators</h1>
 
-<table>
-  <thead>
-    <tr>
-			<div class="header">
-      <th align="left" colspan="2">Name</th>
-      
-      <th align="left" colspan="3">Goal</th>
-     
-      <th>Description</th>
-     
-      <th colspan="3"></th>
-			</div>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @indicators.each do |indicator| %>
-      <tr>
-        <td align="center"><%= indicator.name %></td>
-       
-        <td align="center" colspan="3"><%= indicator.goal %></td>
-        
-        <td align="center" colspan="3"><%= indicator.description %></td>
-       
-        <td><div class="btn-1"><%= link_to 'Show', indicator %></div></td>
-        <td><div class="btn-2"><%= link_to 'Edit', edit_indicator_path(indicator) %></div></td>
-        <td><div class="btn-3"><%= link_to 'Destroy', indicator, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<table>
-<tr>
-<td><div class="btn"><%= link_to 'New Indicator',{:controller=> "indicators", :action => "new"}, :method => :get %></div></td>
-</tr>
-<tr>
-<td><div class="btn"><%= link_to 'Back',{:controller=> "admin", :action => "index"}, :method => :get %></div></td>
-</tr>
--->
-<div id="header">
-	<table>
-   <tr>
-				<td><div class="logo">
-							<%= image_tag ("BaobabHealth.png") %>
-				</div></td>
- </tr>
-</table>
-</div>
 <table align="center">
 <tr>	
 		<td><div class="box" id="box7">
@@ -63,8 +12,6 @@
       <th align="left" >Goal</th>
      
       <th>Description</th>
-     
-     
 			</div>
     </tr>
   </thead>
@@ -77,6 +24,8 @@
         <td align="left" ><%= indicator.goal %></td>
         
    <td align="left" ><%= indicator.description %></td>
+        <td><div class="button"><%= button_to 'Edit', edit_indicator_path(indicator), :method=>:get %></div></td>
+        <td><div class="button"><%= button_to 'Void', indicator, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
       </tr>
     <% end %>
   </tbody>
@@ -84,20 +33,14 @@
 </table>
 </div></td>
 		<td><div class="box" id="box8">
-		<table><tr>	
-		<td><div class="box" id="box10" name="addindicator" onclick="window.location.href='indicators/new';"></div></td>
-		
-		</tr>
-		<tr>
-		<td><div class="box" id="box12"><p></p></div></td>
-		
-		</tr>
-		
-		<tr>
-		<td><div class="box" id="box14"><p></p></div></td>
-		
-		</tr>
-		</table>		
+			<table>
+				<tr>
+					<td><div class="button"><%= button_to 'New Indicator',{:controller=> "indicators", :action => "new"}, :method => :get %></div></td>
+				</tr>
+				<tr>
+				<td><div class="button"><%= button_to 'Back',{:controller=> "admin", :action => "index"}, :method => :get %></div></td>
+</tr>		
+			</table>
 		</div>
 		</td>
 </tr>

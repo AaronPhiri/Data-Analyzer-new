@@ -37,4 +37,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'devise'
+#gem 'devise'
+#gem 'lazy_high_charts'
+
+gem 'groupdate'
+
+gem 'chartkick'

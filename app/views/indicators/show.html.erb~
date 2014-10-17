@@ -15,5 +15,5 @@
   <%= @indicator.description %>
 </p>
 
-<div class="button"><%= button_to 'Edit Indicator',{:controller=> "indicators", :action => "new"}, :method => :get %></div>
-<div class="button"><%= button_to 'Back',{:controller=> "indicators", :action => "index"}, :method => :get %></div>
+<div class="btn"><%= link_to 'Edit Indicator',{:controller=> "indicators", :action => "new"}, :method => :get %></div>
+<div class="btn"><%= link_to 'Back',{:controller=> "indicators", :action => "index"}, :method => :get %></div>

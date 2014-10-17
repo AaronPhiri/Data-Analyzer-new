@@ -1,36 +1,24 @@
-<div id="login">
-<div class="logo">
+
+<form class="form-container" action="/login" method="post">
+	<div class="logo">
 	<%= image_tag ("BaobabHealth.png") %>
-</div>
-<div class = "trialApp_form">
-	<% if flash[:alert] %>
+	</div>
+	<div class="form-title"><h2>DATA ANALYZER</h2></div>
+	
+	<div class="form-title">Username</div>
+		<input class="form-field" type="text" name="name" /><br />
+	<div class="form-title">Password</div>
+		<input class="form-field" type="password" name="password" /><br />
+<% if flash[:alert] %>
 		<p id = "notice"><%=flash[:alert]%></p>
-	<% end %>
-	<%= form_tag("/login", method: "post") do %>
-		<div id="field">
-			<fieldset id="fields">
-			<table>
-			<th colspan="2", align="center">Please Log In</th>
-			<div class="form-control">
-				<tr>				
-				<td><%= label_tag :name, 'Name:'%></td>
-				<td><%= text_field_tag :name, params[:name] %></td>
-				</tr>			
-			</div>
-			<div class="form-control">
-			<tr>
-				<td><%= label_tag :password, 'Password:' %></td>
-				<td><%= password_field_tag :password, params[:password]%></td>
-			</tr>			
-			</div>
-			<div>
-				<tr>
-				
-				<td><%= submit_tag "Login" %></td>
-				</tr>
+	<% end %>	
+	<table>
+		<tr>
+			<td>
+	<div class="back-container">
+		<input class="submit-button" type="submit" value="submit">	
+			</td>	
 		</div>
-		</table>			
-		</div>
-	<% end %>
-</div>
-</div>
+	</tr>
+</table>
+</form>

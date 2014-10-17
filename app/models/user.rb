@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
 				raise "Cant delete last user"
 			end
 		end
+
 end

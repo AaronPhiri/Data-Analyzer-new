@@ -14,12 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-document.getElementById("box1").onclick = function(){display()};
-
-function display(){
-
-window.location.assign("http://localhost:3000/users")
-}
-
-
 

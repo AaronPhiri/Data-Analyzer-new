@@ -1,6 +1,25 @@
-<h1>New indicator</h1>
-
-<%= render 'form' %>
-<div class="btn">
-<%= link_to "Back", :controller=>"indicators", :action=>"index"%>
-</div>
+<form class="form-container2" action="/indicators/create" method="post">
+	<div class="form-title"><h2>Create New Indicator</h2></div>
+	<div class="form-title">Name</div>
+		<input class="form-field" type="text" name="name" /><br />
+	<div class="form-title">Goal</div>
+		<input class="form-field" type="text" name="goal" /><br />
+	<div class="form-title">Description</div>
+		<input class="form-field" type="text" name="description" /><br />
+	<table>
+		<tr>
+			<td>
+				<div class="submit-container">
+				<input class="submit-button" type="submit" value="submit" />
+	</div>
+			</td>
+</form>
+			<td>
+	<div class="back-container">
+		<input class="submit-button" type="button" value="back" action ="indicators" method ="post">	
+			</td>	
+		</div>
+	</tr>
+</table>
+<!--<%= render 'form'%>
+<div class="btn"><%= link_to 'Back',{:controller=> "indicators", :action => "index"}, :method => :get %></div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014083338) do
+ActiveRecord::Schema.define(version: 20141015081919) do
 
   create_table "application_at_sites", force: true do |t|
     t.string   "application_at_site_id"
@@ -79,8 +79,6 @@ ActiveRecord::Schema.define(version: 20141014083338) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role"
-    t.string   "location"
     t.boolean  "admin"
   end
 

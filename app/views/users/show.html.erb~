@@ -1,17 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Name :</strong>
   <%= @user.name %>
 </p>
-<p>
-  <strong>Role:</strong>
-  <%= @user.role %>
-</p>
-<p>
-  <strong>Location:</strong>
-  <%= @user.location %>
-</p>
-
 <div class="button"><%= button_to 'Edit Users',{:controller=> "users", :action => "new"}, :method => :get %></div>
 <div class="button"><%= button_to 'Back',{:controller=> "users", :action => "index"}, :method => :get %></div>

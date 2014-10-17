@@ -66,9 +66,9 @@ class IndicatorsController < ApplicationController
     def set_indicator
       @indicator = Indicator.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def indicator_params
-      params.require(:indicator).permit(:name, :string, :goal, :string, :description, :string)
+			ActionController::Parameters.new(indicator: {name: params['name'], goal: params['goal'], description: params['description']}).require(:indicator)
+      params.permit(:name, :goal, :description)
     end
 end

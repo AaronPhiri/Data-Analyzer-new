@@ -14,13 +14,24 @@ Rails.application.routes.draw do
 	end
 	controller :users do
     get 'have' => :index
+  	get 'index' => :have
 
   end
-	get "sessions/create"
-	get "sessions/destroy"
+	
+	post "indicators/create" => "indicators#create"
+	
+	get "indicators/new" => "indicators#new"
+	
+	get "indicators/destroy" => "indicators#destroy"
 
+	get "indicators/show"	=> "indicators#show"
+
+	get "indicators/edit" => "indicators#edit"
 	resources :users
 
+	post "sessions/create"
+	get "sessions/destroy"
+	
 	resources :indicators
   #match ':controller(/:action(/:id))',:via=>[:get,:post]
   # get 'sessions/new'
