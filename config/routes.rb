@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   
+  resources :results
+
   resources :available_systems
+	resources :tryouts
 
 	get 'admin' => 'admin#index'
   get 'sessions' => 'sessions#new'
-
+	
   post 'sessions' => 'sessions#login'
 
 	controller :sessions do
@@ -15,8 +18,11 @@ Rails.application.routes.draw do
 	controller :users do
     get 'have' => :index
   	get 'index' => :have
-
   end
+	controller :tryout do
+		get 'display' => :index
+		get 'index' => :display
+	end 
 	
 	post "indicators/create" => "indicators#create"
 	
@@ -27,6 +33,7 @@ Rails.application.routes.draw do
 	get "indicators/show"	=> "indicators#show"
 
 	get "indicators/edit" => "indicators#edit"
+	
 	resources :users
 
 	post "sessions/create"
@@ -40,8 +47,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'sessions#new'
-  # Example of regular route:
+  root 'sessions#new'  
+	# Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

@@ -1,0 +1,2 @@
+class Indie < ActiveRecord::Base
+end

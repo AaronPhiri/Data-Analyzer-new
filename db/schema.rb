@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015081919) do
+ActiveRecord::Schema.define(version: 20141022093836) do
 
   create_table "application_at_sites", force: true do |t|
     t.string   "application_at_site_id"
@@ -36,6 +36,11 @@ ActiveRecord::Schema.define(version: 20141015081919) do
     t.datetime "updated_at"
   end
 
+  create_table "encountertypes", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "indicator_counts", force: true do |t|
     t.decimal  "indicator_id", precision: 10, scale: 0
     t.decimal  "site_id",      precision: 10, scale: 0
@@ -52,6 +57,18 @@ ActiveRecord::Schema.define(version: 20141015081919) do
     t.datetime "updated_at"
   end
 
+  create_table "indies", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "results", force: true do |t|
+    t.string   "user_id"
+    t.decimal  "count",      precision: 10, scale: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "roles", force: true do |t|
     t.string   "role_name"
     t.decimal  "role_id",    precision: 10, scale: 0
@@ -59,9 +76,21 @@ ActiveRecord::Schema.define(version: 20141015081919) do
     t.datetime "updated_at"
   end
 
+  create_table "sampledata", force: true do |t|
+    t.string   "user_id"
+    t.decimal  "value",      precision: 10, scale: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sites", force: true do |t|
     t.decimal  "site_id",    precision: 10, scale: 0
     t.string   "site_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tryouts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

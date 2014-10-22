@@ -1,0 +1,12 @@
+<table>
+	<tr><th>User Id</th>
+	<th>Username</th>
+	<th>Occurrence</th></tr>
+<% @sampledata.each do |tryout|%>	      
+	<tr>
+	<td align="left"><%= tryout.user_id %></td>
+	<td align="left"><%= tryout.username %></td>
+	<td align="left"><%= tryout.count%></td>
+	</tr>
+<% end %>
+</table>

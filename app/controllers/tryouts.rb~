@@ -1,0 +1,5 @@
+class tryoutsController < ApplicationController
+	def index
+		@tryouts = Tryout.all
+	end
+end

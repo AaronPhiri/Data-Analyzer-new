@@ -1,0 +1,5 @@
+class SampledataController < ApplicationController
+	def index
+    @sampledata = Sampledata.all
+  end
+end

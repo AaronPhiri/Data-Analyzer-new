@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
 			end
 		end
 
+	has_many :indicator, counter_cache: true
+	has_many :available_systems
 end
