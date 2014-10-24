@@ -1,12 +1,10 @@
-<table>
-	<tr><th>User Id</th>
+<table class="table">
 	<th>Username</th>
 	<th>Occurrence</th></tr>
 <% @sampledata.each do |tryout|%>	      
 	<tr>
-	<td align="left"><%= tryout.user_id %></td>
-	<td align="left"><%= tryout.username %></td>
-	<td align="left"><%= tryout.count%></td>
+	<td align="center"><%= tryout.name %></td>
+	<td align="center"><%= tryout.date_created%></td>
 	</tr>
 <% end %>
 </table>

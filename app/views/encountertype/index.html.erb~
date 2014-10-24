@@ -1,0 +1,12 @@
+<table class="table">
+	<tr><th>User Id</th>
+	<th>Username</th>
+	<th>Occurrence</th></tr>
+<% @encountertype.each do |tryout|%>	      
+	<tr>
+	<td align="left"><%= tryout.name %></td>
+	<td align="left"><%= tryout.username %></td>
+	<td align="left"><%= tryout.count%></td>
+	</tr>
+<% end %>
+</table>

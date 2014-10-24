@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022093836) do
+ActiveRecord::Schema.define(version: 20141023075207) do
 
   create_table "application_at_sites", force: true do |t|
     t.string   "application_at_site_id"
@@ -93,6 +93,8 @@ ActiveRecord::Schema.define(version: 20141022093836) do
   create_table "tryouts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_name"
+    t.decimal  "count",      precision: 10, scale: 0
   end
 
   create_table "user_at_sites", force: true do |t|

@@ -21,7 +21,14 @@ Rails.application.routes.draw do
   end
 	controller :tryout do
 		get 'display' => :index
-		get 'index' => :display
+		get 'check' => :results
+		get 'reader' => :reader
+		get 'pie' => :piechart
+		get 'line' => :line
+	end 
+	controller :encountertype do
+		get 'viewnow' => :index
+		get 'index' => :viewnow
 	end 
 	
 	post "indicators/create" => "indicators#create"

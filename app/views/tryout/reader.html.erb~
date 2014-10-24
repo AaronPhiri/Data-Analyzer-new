@@ -1,0 +1,69 @@
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<table>
+<tr><div id="container" style="min-width: 500px; height: 400px; margin: 0 auto">
+<script>
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Number of Voided Encounters'
+        },
+        subtitle: {
+            text: 'Source: openmrs_anc'
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Encounter Count'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: 'Encounter Count: <b>{point.y:.1f}</b>'
+        },
+        series: [
+																
+								{
+            name: 'Encounter',
+						
+            data: [	
+								<%@sampledata.each do |records|%>
+                ['<%=records.name%>', <%=records.count%>],
+      					<% end %>
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                align: 'right',
+                x: 4,
+                y: 10,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif',
+                    textShadow: '0 0 3px black'
+                }
+            }
+						
+        }
+				]
+    });
+});
+</script>
+</div></tr>
+</table>
