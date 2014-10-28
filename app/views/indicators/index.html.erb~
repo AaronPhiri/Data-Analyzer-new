@@ -1,47 +1,43 @@
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<table align="center">
+<tr>	
+		<td><div class="box" id="box7">
+<table>
+	<table class="table">
+  <thead>
+    <tr>
+			<div class="header">
+      <th align="left" >Name</th>
+      
+      <th align="left" ></th>
+     
+      <th></th>
+			</div>
+    </tr>
+  </thead>
 
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
-	
-<script>
+  <tbody>
+      <tr>
+        <td align="left">Encounters Voided</td>
+       
+        
+				<td><div class="button"><%= button_to 'Display', {:controller=> "tryout", :action => "reader"}, :method => :get  %></div></td>
+        <td><div class="button"><%= button_to 'Piechart', {:controller=> "tryout", :action => "piechart"}, :method => :get %></div></td>
+        <td><div class="button"><%= button_to 'Void', indicator, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
+      </tr>
+  </tbody>
 
-$(function () {
-    $('#container').highcharts({
-				title: {
-            text: 'Voided Encounters',
-            x: -20 //center
-        },
-        subtitle: {
-            text: 'Source: opemrs_anc',
-            x: -20
-        },
-        xAxis: {
-            categories: [rec]
-        },
-        yAxis: {
-            title: {
-                text: 'Voided count'
-            },
-            plotLines: [{
-                value: 0,
-                width: 2,
-                color: '#808080'
-            }]
-        },
-        tooltip: {
-            valueSuffix: ''
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: [{
-            name: 'Admin',
-            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-        }]
-    });
-});
-</script>
-</div>
+</table>
+</div></td>
+		<td><div class="box" id="box8">
+			<table>
+				<tr>
+					<td><div class="button"><%= button_to 'New Indicator',{:controller=> "indicators", :action => "new"}, :method => :get %></div></td>
+				</tr>
+				<tr>
+				<td><div class="button"><%= button_to 'Back',{:controller=> "admin", :action => "index"}, :method => :get %></div></td>
+</tr>		
+			</table>
+		</div>
+		</td>
+</tr>
+</table>

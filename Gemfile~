@@ -39,6 +39,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 #gem 'devise'
 #gem 'lazy_high_charts'
+gem 'will_paginate', '~> 3.0'
 
 gem 'groupdate'
 

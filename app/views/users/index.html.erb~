@@ -1,3 +1,504 @@
+<<<<<<< HEAD
+
+
+<style>
+  input[class="label"]{
+  font-size:17px;
+
+}
+.pagination .previous_page,.pagination .next_page,.pagination .previous_page disabled,.pagination .next_page disabled{
+  dispaly:block;
+  border:1px solid blue;
+
+}
+.hide{
+display:none;
+}
+.pagination a{
+  border:1px solid blue;
+ foreground-color:white;
+}
+.hidediv{
+position:absolute !important;
+visibility:collapse !important;
+
+}
+.showdiv{
+visibility:visible !important;
+position:relative !important;
+
+}
+em{
+ color:white;
+border:1px solid blue;
+ foreground-color:white;
+background-color:blue;
+}
+
+input[class="create"]{
+  width:90px;
+  height:60px;
+
+}
+input[class="create"]:hover{
+  width:90px;
+  height:60px;
+  background-color:blue;
+
+
+}
+.editbutton:hover{
+ background-color:blue;
+}
+input[class="inputdata"]{
+   height:50px;
+  width:400px;
+ 
+}
+input[class="inputdatat"]{
+   height:50px;
+  width:200px;
+ 
+}
+input[class="label"]{
+ font-size:17px;
+}
+
+#fields{
+ vertical-align:up;
+
+}
+#first{
+width:50%;
+position:relative;
+top:-260px;
+left:52%;
+float:left;
+
+
+}
+#second{
+width:50%;
+position:relative;
+
+}
+#whole{
+width:100%;
+position:relative;
+}
+.myusers tr td,.myusers tr th{
+  border:1px solid black;
+ width:25%;
+
+}
+#nouser{
+color:red;
+}
+#leftbutton .create{
+ width:90px;
+ height:61px;
+ 
+ position:relative;
+left:-600px;
+ 
+
+}
+ 
+</style>
+<div id="whole">
+<div id="second">
+<p id="notice"><%= notice %></p>
+<%= form_tag("/users/create", method: "post") do %>
+		
+			<fieldset id="fields">
+			<table>
+    <thead>
+			<th colspan="2", align="center">Enter user details to add new user</th>
+			
+    </thead>
+    <tbody>
+						<tr>				
+									<td><%= label_tag :name, 'Name:'%></td>
+									<td><%= text_field_tag "user[name]", params[:name], :class=>"inputdata" %></td>
+						</tr>			
+	
+					<tr>
+								<td><%= label_tag :password_digest, 'Password:' %></td>
+								<td><%= password_field_tag "user[password_digest]", params[:password_digest] , :class=>"inputdata" %></td>
+					</tr>			
+					<tr>
+								<td><%= label_tag :password_confirmation, 'password_confirmation:' %></td>
+								<td><%= password_field_tag "user[password_confirmation]", params[:password_confirmation] , :class=>"inputdata" %></td>
+					</tr>		
+				<tr>
+				
+				<td><%= submit_tag "create user",:class=>"create" %></td>
+				</tr>
+		
+  </tbody>
+		</table>
+ </fieldset>			
+		
+	<% end %>
+
+
+
+
+
+</div>
+  <div>
+ 
+<div>
+<div id="first">
+<h1>Listing users</h1>
+
+<% if nouser %>
+<p id="nouser"><%= nouser %></p>
+<% end %>
+<div>
+<%= form_tag("/users/search", method: "get") do %>
+		
+		
+			<table>
+    <thead>
+    </thead>
+    <tbody>
+						<tr>				
+									
+									<td><%= text_field_tag "user[name]", params[:name], :class=>"inputdata" %></td>
+									<td><%= submit_tag "Search user",:class=>"create" %></td>
+						</tr>			
+	
+  </tbody>
+		</table>
+	<% end %>
+</div>
+
+
+
+
+
+
+
+
+<table class="myusers">
+  <thead>
+    <tr>
+      <th>Name</th>
+			<th>Show</th>
+			<th>Edit</th>
+			<th>Remove</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+			
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= button_to 'Show', user ,:method=>:get, :class=>"editbutton"%></td>
+        <td><%= button_to 'Edit', edit_user_path(user) ,:method=>:get,:class=>"editbutton"%></td>
+        <td><%= button_to 'remove', user, method: :delete, data: { confirm: 'Are you sure?' },:class=>"editbutton" %></td>
+      </tr>
+    <% end %>
+   
+  </tbody>
+</table>
+<div>
+<%= form_tag("/users/create", method: "post") do %>
+		
+		
+			<table>
+    <thead>
+    </thead>
+    <tbody>
+						<tr>
+<td rowspan="3"><%= will_paginate @users %></td>
+</tr>		
+	
+  </tbody>
+		</table>
+	<% end %>
+</div>
+</div>
+</div>
+<div id="leftbutton">
+<%= button_to "Back",{:controller=>"admin",:action=>"index"},:class=>"create" , :method=>:get %>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<!--
+<style>
+input[class="create"]{
+position:relative;
+  width:100%;
+  height:100px;
+
+}
+input[class="create"]:hover{
+  width:100%;
+  height:100px;
+  background-color:blue;
+
+
+}
+.editbutton:hover{
+ background-color:blue;
+}
+input[class="inputdata"]{
+   height:50px;
+  width:400px;
+ 
+}
+.page{
+margin:0px;
+padding:0px;
+
+position:relative;
+width:100%;
+height:100%;
+border:1px solid #546789;
+}
+.header{
+margin:0px;
+padding:0px;
+position:relative;
+width:100%;
+height: 100px;
+border: 1px solid black;
+text-align: center;
+text-transform: capitalize;
+font-weight: bolder;
+vertical-align:100px;
+font-size: 30px;
+
+vertical-align:middle;
+}
+
+.whole{
+width: 100%;
+height: 700px;
+border: 1px solid red;
+margin:0px;
+padding:0px;
+}
+.navigator{
+margin:0px;
+padding:0px;
+width: 20%;
+height: 100%;
+border: 1px solid black;
+position: relative;
+float: left;
+}
+.content{
+margin:0px;
+padding:0px;
+width: 80%;
+height: 700px;
+border: 1px solid blue;
+position: relative;
+float: right;
+}
+.title{
+margin:0px;
+padding:0px;
+position:relative;
+vertical-align: bottom;
+width:100%;
+height:10%;
+border: 1px solid yellow;
+text-align: center;
+text-transform: capitalize;
+font-weight: bolder;
+	
+}
+
+.navigator table tr td{
+margin:0px;
+padding:0px;
+border: 1px solid yellow;
+}
+.navigator table{
+margin:0px;
+padding:0px;
+position:relative;
+width:100%;
+height:50%;
+border: 1px solid yellow;
+}
+.navigator table tr{
+margin:0px;
+padding:0px;
+height:20%;
+}
+.myusers{
+position:relative;
+width:100%;
+margin:0px;
+padding:0px;
+border:1px solid red;
+}
+.myusers tr td,.myusers tr th{
+margin:0px;
+padding:0px;
+text-align:center;
+border:1px solid black;
+}
+.pagination .previous_page,.pagination .next_page,.pagination .previous_page disabled,.pagination .next_page disabled{
+  dispaly:block;
+  border:1px solid blue;
+
+}
+.hide{
+display:none;
+}
+.pagination a{
+  border:1px solid blue;
+ foreground-color:white;
+}
+.hidediv{
+position:absolute !important;
+visibility:collapse !important;
+
+}
+.showdiv{
+visibility:visible !important;
+position:relative !important;
+
+}
+em{
+ color:white;
+border:1px solid blue;
+ foreground-color:white;
+background-color:blue;
+}
+.addusersdiv{
+margin:0px;
+padding:0px;
+position:absolute;
+visibility:hidden;
+}
+.listusersdiv{
+margin:0px;
+padding:0px;
+
+}
+.summary{
+margin:0px;
+padding:0px;
+position:absolute;
+visibility:hidden;
+color:red;
+}
+#AddUsers:active{
+color:red;
+background-color:red;
+}
+p{
+position:relative;
+top:20%;
+font-size: 30px;
+}
+
+</style>
+<div class="page">
+<div class='header'><p><strong>Welcome to User Admistration page</strong></p></div>
+<div class="whole">
+<div class="navigator">
+
+<table>
+<thead>
+</thead>
+<tbody>
+<tr>
+<td><dv id="listUsers" ><%= button_to "List Users",{:controller=>"users",:action=>"index"},:class=>"create" , :method=>:get %></div></td>
+</tr>
+
+<tr>
+<td><div id="AddUsers" onclick='addUsers()'><%= button_to "Add Users",{:controller=>"users",:action=>"index"},:class=>"create" , :method=>:get,adduser: 'heloo' %><div></td>
+</tr>
+
+<tr>
+<td><div id="Summary"><%= button_to "Summary of Users",{:controller=>"users",:action=>"index"},:class=>"create" , :method=>:get %></div></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="content">
+<div class="title"><p>Listing users</p>
+</div>
+<div id="display">
+<%if adduser%>
+<%= render 'form' %>
+<% end %>
+
+</div>
+
+</div>
+</div>
+</div>
+<script src="jquery.1.9.1.min.js" type="text/javascript"></script>
+<script>
+
+
+							$('#AddUsers').click(function(){
+							 add();
+							});
+
+							$('#listUsers').click(function(){
+								$('.addusersdiv').removeClass("showdiv");
+								$('.addusersdiv').addClass("hidediv");
+								$('.listusersdiv').removeClass("hidediv");
+								$('.listusersdiv').addClass("showdiv");
+
+							});
+
+
+							$('#Summary').click(function(){
+
+
+								$('.listusersdiv').removeClass("showdiv");
+								$('.listusersdiv').addClass("hidediv");
+								$('.addusersdiv').removeClass("showdiv");
+								$('.addusersdiv').addClass("hidediv");
+								$('.summary').removeClass("hidediv");
+								$('.summary').addClass("showdiv");
+							});
+
+							function add(){
+
+								$('.listusersdiv').removeClass("showdiv");
+								$('.listusersdiv').addClass("hidediv");
+								$('.addusersdiv').removeClass("hidediv");
+								$('.addusersdiv').addClass("showdiv");
+							}
+
+
+
+
+
+</script>
+
+-->
+
+
+
+
+
+
+
+
+=======
 <div id="wholetable">
 <table align="left" >
 <tr>	
@@ -36,3 +537,4 @@
 </tr>
 </table>
 </div>
+>>>>>>> 848c0b16b5889221e50d72ddca325c6964217d09

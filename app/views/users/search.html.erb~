@@ -1,0 +1,101 @@
+
+<style>
+
+input[class="label"]{
+  font-size:17px;
+
+}
+
+
+input[class="create"]{
+  width:90px;
+  height:60px;
+
+}
+input[class="create"]:hover{
+  width:90px;
+  height:60px;
+  background-color:blue;
+
+
+}
+.editbutton:hover{
+ background-color:blue;
+}
+input[class="inputdata"]{
+   height:50px;
+  width:400px;
+ 
+}
+input[class="inputdatat"]{
+   height:50px;
+  width:200px;
+ 
+}
+input[class="label"]{
+ font-size:17px;
+}
+
+#fields{
+ vertical-align:up;
+
+}
+#first{
+width:50%;
+position:relative;
+top:-260px;
+left:52%;
+float:left;
+
+
+}
+#second{
+width:50%;
+position:relative;
+
+}
+#whole{
+width:100%;
+position:relative;
+}
+.myusers tr td,.myusers tr th{
+  border:1px solid black;
+ width:25%;
+
+}
+#leftbutton .create{
+ width:90px;
+ height:61px;
+ 
+ position:relative;
+left:-600px;
+ 
+
+}
+</style>
+
+
+
+<table>
+<thead>
+<tr>
+      <th>Name</th>
+			<th>Show</th>
+			<th>Edit</th>
+			<th>Remove</th>
+      <th colspan="3"></th>
+    </tr>
+</tahead>
+<tbody>
+<p id="notice"><%= notice %></p>
+<% @person.each do |user| %>
+<tr>
+ 				<td><%= user.name %></td>
+				<td><%= button_to 'Show', user ,:method=>:get, :class=>"editbutton"%></td>
+        <td><%= button_to 'Edit', edit_user_path(user) ,:method=>:get,:class=>"editbutton"%></td>
+        <td><%= button_to 'remove', user, method: :delete, data: { confirm: 'Are you sure?' },:class=>"editbutton" %></td>
+</tr>
+<%end%>
+</tbody>
+</table>
+<div><%= button_to "Back",{:controller=>"users",:action=>"index"},:class=>"create" , :method=>:get %></div>

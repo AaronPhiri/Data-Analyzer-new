@@ -1,0 +1,47 @@
+<div>
+
+
+<div class="addusersdiv">
+<p id="notice"><%= notice %></p>
+<%= form_tag("/users/create", method: "post") do %>
+		
+			<fieldset id="fields">
+			<table>
+    <thead>
+			<th colspan="2", align="center">Enter user details to add new user</th>
+			
+    </thead>
+    <tbody>
+						<tr>				
+									<td><%= label_tag :name, 'Name:'%></td>
+									<td><%= text_field_tag "user[name]", params[:name], :class=>"inputdata" %></td>
+						</tr>			
+	
+					<tr>
+								<td><%= label_tag :password_digest, 'Password:' %></td>
+								<td><%= password_field_tag "user[password_digest]", params[:password_digest] , :class=>"inputdata" %></td>
+					</tr>			
+					<tr>
+								<td><%= label_tag :password_confirmation, 'password_confirmation:' %></td>
+								<td><%= password_field_tag "user[password_confirmation]", params[:password_confirmation] , :class=>"inputdata" %></td>
+					</tr>		
+				<tr>
+				
+				<td><%= submit_tag "create user",:class=>"create" %></td>
+				</tr>
+		
+  </tbody>
+		</table>
+ </fieldset>			
+		
+	<% end %>
+</div>
+
+
+
+
+
+
+
+
+</div>

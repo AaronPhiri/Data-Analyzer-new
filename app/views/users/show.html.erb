@@ -1,8 +1,44 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+<<<<<<< HEAD
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<!--<%= button_to 'Edit', edit_user_path(@user) %> |
+<%= button_to 'Back', users_path %>-->
+
+<table>
+<thead>
+</thead>
+<tbody>
+<tr>
+ <td><%= button_to 'Edit',edit_user_path(@user),:method=>:get,:class=>"create"%> </td>
+ <td><%= button_to 'Back', {:controller=>"users",:action=>"index"},:method=>:get,:class=>"create" %></td>
+</tr>
+</tbody>
+</table>
+<style>
+
+input[class="create"]{
+  width:90px;
+  height:60px;
+
+}
+input[class="create"]:hover{
+  width:90px;
+  height:60px;
+  background-color:blue;
+
+
+}
+
+</style>
+=======
   <strong>Name :</strong>
   <%= @user.name %>
 </p>
 <div class="button"><%= button_to 'Edit Users',{:controller=> "users", :action => "new"}, :method => :get %></div>
 <div class="button"><%= button_to 'Back',{:controller=> "users", :action => "index"}, :method => :get %></div>
+>>>>>>> 848c0b16b5889221e50d72ddca325c6964217d09

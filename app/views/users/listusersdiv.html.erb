@@ -1,0 +1,42 @@
+<div class="listusersdiv">
+<%if notice %>
+<p id="notice"<%= notice %>></p>
+<% end %>
+<table class="myusers">
+  <thead>
+    <tr>
+      <th>Name</th>
+			<th>Show</th>
+			<th>Edit</th>
+			<th>Remove</th>
+    </tr>
+  </thead>
+
+  <tbody>
+			<p id="notice"><%= notice %></p>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= button_to 'Show', user ,:method=>:get, :class=>"editbutton"%></td>
+        <td><%= button_to 'Edit', edit_user_path(user) ,:method=>:get,:class=>"editbutton"%></td>
+        <td><%= button_to 'remove', user, method: :delete, data: { confirm: 'Are you sure?' },:class=>"editbutton" %></td>
+      </tr>
+    <% end %>
+   
+  </tbody>
+</table>
+<div>
+<%= form_tag("/users/create", method: "post") do %>
+			<table>
+    <thead>
+    </thead>
+    <tbody>
+						<tr>
+<td rowspan="3"><%= will_paginate @users %></td>
+</tr>		
+	
+  </tbody>
+		</table>
+	<% end %>
+</div>
+</div>

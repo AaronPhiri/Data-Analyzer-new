@@ -1,0 +1,24 @@
+<h1>Editing user</h1>
+
+<%= render 'form' %>
+
+<%= button_to 'Show', @user,:method=>:get,:class=>"create"%> |
+<%= button_to 'Back', {:controller=>"users",:action=>"index"},:method=>:get,:class=>"create" %>
+
+
+<style>
+
+input[class="create"]{
+  width:90px;
+  height:60px;
+
+}
+input[class="create"]:hover{
+  width:90px;
+  height:60px;
+  background-color:blue;
+
+
+}
+
+</style>

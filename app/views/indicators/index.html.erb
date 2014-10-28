@@ -8,26 +8,22 @@
 			<div class="header">
       <th align="left" >Name</th>
       
-      <th align="left" >Goal</th>
+      <th align="left" ></th>
      
-      <th>Description</th>
+      <th></th>
 			</div>
     </tr>
   </thead>
 
   <tbody>
-    <% @indicators.each do |indicator| %>
       <tr>
-        <td align="left"><%= indicator.name %></td>
+        <td align="left">Encounters Voided</td>
        
-        <td align="left" ><%= indicator.goal %></td>
         
-   <td align="left" ><%= indicator.description %></td>
-				<td><div class="button"><%= button_to 'Show', indicator_path(indicator), :method=>:post %></div></td>
-        <td><div class="button"><%= button_to 'Edit', edit_indicator_path(indicator), :method=>:get %></div></td>
-        <td><div class="button"><%= button_to 'Void', indicator, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
+				<td><div class="button"><%= button_to 'Display', {:controller=> "tryout", :action => "reader"}, :method => :get  %></div></td>
+        <td><div class="button"><%= button_to 'Piechart', {:controller=> "tryout", :action => "piechart"}, :method => :get %></div></td>
+        <td><div class="button"><%= button_to 'Linegraph', {:controller=> "tryout", :action => "results"}, :method => :get %> </div></td>
       </tr>
-    <% end %>
   </tbody>
 
 </table>

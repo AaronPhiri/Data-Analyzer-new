@@ -1,3 +1,79 @@
+<<<<<<< HEAD
+<style>
+input[class="label"]{
+  text-size:17px;
+
+}
+input[class="inputdata"]{
+  width=400px;
+  height=200px;
+
+}
+input[class="create"]{
+  width:90px;
+  height:60px;
+
+}
+input[class="create"]:hover{
+  width:90px;
+  height:60px;
+  background-color:blue;
+
+
+}
+.editbutton:hover{
+ background-color:blue;
+}
+input[class="inputdata"]{
+   height:50px;
+  width:400px;
+}
+input[class="label"]{
+ font-size:17px;
+}
+
+#fields{
+ vertical-align:up;
+
+}
+#first{
+width:50%;
+position:relative;
+top:-260px;
+left:52%;
+float:left;
+
+
+}
+#second{
+width:50%;
+position:relative;
+
+}
+#whole{
+width:100%;
+position:relative;
+}
+.myusers tr td,.myusers tr th{
+  border:1px solid black;
+
+}
+#leftbutton .create{
+ width:90px;
+ height:61px;
+ 
+ position:relative;
+left:-600px;
+ 
+
+}
+ 
+
+</style>
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+=======
 <table align="center" width="100%">
 <tr> 
  <!--start of first table-->	
@@ -6,6 +82,7 @@
   <% if @user.errors.any? %>
     <div id="error_explanation">
  <!--error message-->
+>>>>>>> 848c0b16b5889221e50d72ddca325c6964217d09
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
@@ -15,6 +92,45 @@
       </ul>
     </div>
   <% end %>
+<<<<<<< HEAD
+
+
+<table>
+ <thead>
+ </thead>
+<tbody>
+ <tr>
+	
+ <tr>
+	<th><legend>Enter User Details</legend></th>
+  </tr>
+ <tr>
+ 
+    <td><%= f.label :name, 'Name :' ,:class=>"label"%></td>
+    <td><%= f.text_field :name,:class=>"inputdata",:maxlength=>"4" %></td>
+  
+</tr>
+<tr>
+  
+    <td><%= f.label :password, 'Password :' %></td>
+   <td> <%= f.password_field :password_digest ,:class=>"inputdata"%></td>
+  
+</tr>
+  <tr>
+    <td><%= f.label :password_confirmation, 'Confirm :' %></td>
+    <td><%= f.password_field :password_confirmation,:class=>"inputdata" %></td>
+  <tr>
+ <tr>
+  
+    <td><%= f.submit 'create user',:class=>'create'%></td>
+  
+  </tr>
+
+</tr>
+</tbody>
+<% end %>
+</table>
+=======
 <!--end of error message-->
 	<fieldset height="600px">
 <table>
@@ -61,3 +177,4 @@
 
 
 
+>>>>>>> 848c0b16b5889221e50d72ddca325c6964217d09

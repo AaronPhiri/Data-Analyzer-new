@@ -1,5 +1,30 @@
+<<<<<<< HEAD
+<h1>New user</h1>
+
+<%= render 'form' %>
+
+<%= button_to 'Back',{:controller=>"users",:action=>"index"},:method=>:get,:class=>"create"%>
+
+<style>
+
+input[class="create"]{
+  width:90px;
+  height:60px;
+
+}
+input[class="create"]:hover{
+  width:90px;
+  height:60px;
+  background-color:blue;
+
+
+}
+
+</style>
+=======
 
 
 <%= render 'form' %>
 
 <div class="button"><%= button_to 'Back',{:controller=> "users", :action => "index"}, :method => :get %></div>
+>>>>>>> 848c0b16b5889221e50d72ddca325c6964217d09

@@ -15,7 +15,7 @@ default: &default
   pool: 5
   username: root
   password:	password
-  #host: 192.168.18.237
+  host: localhost
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -32,10 +32,10 @@ test:
 other_db:
   adapter: mysql2
   encoding: utf8
-  database: openmrs_anc
+  database: demo_dataset
   username: root
-  password: root
-  host: 192.168.5.14
+  password: password
+  host: localhost
   port: 3306
 
 # As with config/secrets.yml, you never want to store sensitive information,

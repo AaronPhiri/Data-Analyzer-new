@@ -2,5 +2,35 @@
 
 <%= render 'form' %>
 
+<<<<<<< HEAD
+
+<table>
+<thead>
+</thead>
+<tbody>
+<tr>
+ <td><%= button_to 'Show', @user,:method=>:get,:class=>"create"%> </td>
+ <td><%= button_to 'Back', {:controller=>"users",:action=>"index"},:method=>:get,:class=>"create" %></td>
+</tr>
+</tbody>
+</table>
+<style>
+
+input[class="create"]{
+  width:90px;
+  height:60px;
+
+}
+input[class="create"]:hover{
+  width:90px;
+  height:60px;
+  background-color:blue;
+
+
+}
+
+</style>
+=======
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
+>>>>>>> 848c0b16b5889221e50d72ddca325c6964217d09
