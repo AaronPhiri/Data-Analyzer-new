@@ -1,33 +1,20 @@
-<!--  <div id="body"><h1>Hello User</h1>
-<h2>Choose a function to perform<h2>
-<table>
-<tr>
-<td><div class="button"><%= button_to 'User Mananagement',
-	{:controller=> "users", :action => "index"}, :method => :get %></div></td>
-
-<td><div class="button"><%= button_to 'Indicator Mananagement',
-{:controller=> "indicators", :action => "index"}, :method => :get %></div></td>
-
-<tr><td colspan="2", align="center"><div class="button"><%= button_to 'Sign Out', 
-{:controller=>"sessions", :action => "destroy"}, :method => :get %></div></td></tr>
-</table>
-</div> -->
 <div id="wholepage">
-
+<h1>Hello Admin</h1>
+<h2> Please choose a function to perform<h2>
 <table align="center">
 <tr>	
-		<td><div class="box" id="box1" onclick="window.location.href='users';">
-			<p>Users</p>	
+		<td><div class="glow" id="box1" onclick="window.location.href='users';">
+			<div id="head"p>Users</div>	
 			</div></td>
-			<td><div class="box" id="box2" onclick="window.location.href='indicators';">
-			<p>Indicators</p>			
+			<td><div class="glow" id="box2" onclick="window.location.href='indicators';">
+			<div id="head">Indicators</div>			
 			</div></td>
-		<td><div class="box" id="box3"><p>Available Systems</p></div></td>
+		<td><div class="glow" id="box3" onclick="window.location.href='results';"><div id="head">Available Systems</div></div></td>
 </tr>
 <tr>		
-		<td><div class="box" id="box4"><p>Messages</p></div></td>
-		<td><div class="box" id="box5" onclick="window.location.href='display';"><p>Summary</p></div></td>
-		<td><div class="box" id="box6"><p>Locations</p></div></td>
+		<td><div class="glow" id="box4" onclick="window.location.href='pie';"><div id="head">Messages</div></div></td>
+		<td><div class="glow" id="box5" onclick="window.location.href='display';"><div id="head">Summary</div></div></td>
+		<td><div class="glow" id="box6" onclick="window.location.href='reader';"><div id="heaad">Locations</div></div></td>
 </tr>
 </table>
 </div>

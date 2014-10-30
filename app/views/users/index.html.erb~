@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 
 <style>
@@ -235,7 +235,7 @@ left:-600px;
 
 
 
-<!--
+
 <style>
 input[class="create"]{
 position:relative;
@@ -489,7 +489,6 @@ font-size: 30px;
 
 </script>
 
--->
 
 
 
@@ -498,7 +497,8 @@ font-size: 30px;
 
 
 
-=======
+
+
 <div id="wholetable">
 <table align="left" >
 <tr>	
@@ -536,5 +536,4 @@ font-size: 30px;
 </td>
 </tr>
 </table>
-</div>
->>>>>>> 848c0b16b5889221e50d72ddca325c6964217d09
+</div>>

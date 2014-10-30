@@ -1,5 +1,5 @@
 class IndicatorsController < ApplicationController
-  before_action :set_indicator, only: [:show, :edit, :update, :destroy]
+  before_action :set_indicator, only: [:show, :edit, :update, :void]
 
   # GET /indicators
   # GET /indicators.json
@@ -68,7 +68,7 @@ class IndicatorsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def indicator_params
-			Parameters.new(indicator: {name: params['name'], goal: params['goal'], description: params['description']}).require(:indicator)
+			ActionController::Parameters.new(indicator: {name: params['name'], goal: params['goal'], description: params['description']}).require(:indicator)
       params.permit(:name, :goal, :description)
     end
 end

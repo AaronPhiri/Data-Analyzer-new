@@ -1,69 +1,59 @@
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
-<table>
-<tr><div id="container" style="min-width: 500px; height: 400px; margin: 0 auto">
-<script>
+
+
+		
+		<script type="text/javascript">
 $(function () {
     $('#container').highcharts({
-        chart: {
-            type: 'column'
-        },
         title: {
-            text: 'Number of Voided Encounters'
+            text: 'Monthly Average Temperature',
+            x: -20 //center
         },
         subtitle: {
-            text: 'Source: openmrs_anc'
+            text: 'Source: WorldClimate.com',
+            x: -20
         },
         xAxis: {
-            type: 'category',
-            labels: {
-                rotation: -45,
-                style: {
-                    fontSize: '13px',
-                    fontFamily: 'Verdana, sans-serif'
-                }
-            }
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         },
         yAxis: {
-            min: 0,
             title: {
-                text: 'Encounter Count'
-            }
-        },
-        legend: {
-            enabled: false
+                text: 'Temperature (°C)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
         },
         tooltip: {
-            pointFormat: 'Encounter Count: <b>{point.y:.1f}</b>'
+            valueSuffix: '°C'
         },
-        series: [
-																
-								{
-            name: 'Encounter',
-						
-            data: [	
-								<%@sampledata.each do |records|%>
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Encounter Distribution',
+
+            data: [ <%@sampledata.each do |records|%>
                 ['<%=records.name%>', <%=records.count%>],
       					<% end %>
-            ],
-            dataLabels: {
-                enabled: true,
-                rotation: -90,
-                color: '#FFFFFF',
-                align: 'right',
-                x: 4,
-                y: 10,
-                style: {
-                    fontSize: '13px',
-                    fontFamily: 'Verdana, sans-serif',
-                    textShadow: '0 0 3px black'
-                }
-            }
-						
-        }
-				]
+									]
+        }]
     });
 });
-</script>
-</div></tr>
-</table>
+		</script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="/javascripts/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+

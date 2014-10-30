@@ -1,0 +1,58 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="/javascripts/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+<%= raise @sampledata.inspect %>
+$(function () {
+    $('#container').highcharts({
+        title: {
+            text: 'Number of Voided Encounter',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source:new_data',
+            x: -20
+        },
+        xAxis: {
+            
+        },
+        yAxis: {
+            title: {
+                text: 'Encounters Voided Count'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ''
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{     
+									<% @sampledata.each do |encounter_type| %>
+										
+												name: '<%= encounter_type %>',
+												data : [ <%@sampledata.each do |records|%>
+																['<%=records.name%>', <%=records.count%>],
+															<% end %>
+															]
+										
+      					}]
+    });
+});
+		</script>
+
+
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+

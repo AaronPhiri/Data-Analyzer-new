@@ -1,5 +1,5 @@
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="app/assets/javascripts/highcharts.js"></script>
+<script src="app/assets/javascripts/exporting.js"></script>
 
 <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">
 <script>
@@ -11,7 +11,7 @@ $(function () {
             plotShadow: false
         },
         title: {
-            text: 'Encounter Voided DIstribution'
+            text: 'Encounter Voided Distribution'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -32,8 +32,8 @@ $(function () {
         series: [{
             type: 'pie',
             name: 'Encounter Distribution',
-            data: [
-<%@sampledata.each do |records|%>
+
+            data: [ <%@sampledata.each do |records|%>
                 ['<%=records.name%>', <%=records.count%>],
       					<% end %>
 									]

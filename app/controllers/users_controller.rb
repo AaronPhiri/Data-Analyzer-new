@@ -5,15 +5,14 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-
     @users = User.all.paginate(page: params[:page], per_page: 6)
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-  
-
+   @user = User.find(params[:id])
+		end
 
   # GET /users
   # GET /users.json
@@ -26,7 +25,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-
+		@user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -40,7 +39,6 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-
 
   end
   def search
@@ -59,7 +57,7 @@ class UsersController < ApplicationController
  else
  
 respond_to do |format|
- format.html { redirect_to users_url, nouser: "Sory you dont have a user by that name,pleas try another name! or create that user!" }
+ format.html { redirect_to users_url, nouser: "Sorry you dont have a user by that name,please try another name! or create that user!" }
   
   end
 end
@@ -132,10 +130,6 @@ end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-
-
-
-
       @user = User.find(params[:id])
     end
 
@@ -147,4 +141,4 @@ end
       params.require(:user).permit(:name, :password, :password_confirmation)
 
     end
-end
+

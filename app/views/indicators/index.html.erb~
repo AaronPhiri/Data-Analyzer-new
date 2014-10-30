@@ -1,3 +1,5 @@
+<h>Indicators</h>
+
 <table align="center">
 <tr>	
 		<td><div class="box" id="box7">
@@ -22,7 +24,7 @@
         
 				<td><div class="button"><%= button_to 'Display', {:controller=> "tryout", :action => "reader"}, :method => :get  %></div></td>
         <td><div class="button"><%= button_to 'Piechart', {:controller=> "tryout", :action => "piechart"}, :method => :get %></div></td>
-        <td><div class="button"><%= button_to 'Void', indicator, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
+        <td><div class="button"><%= button_to 'Linegraph', {:controller=> "tryout", :action => "results"}, :method => :get %> </div></td>
       </tr>
   </tbody>
 

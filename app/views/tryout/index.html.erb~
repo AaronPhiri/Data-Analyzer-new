@@ -8,3 +8,5 @@
 	</tr>
 <% end %>
 </table>
+
+<div class="button"><%= button_to 'Back',{:controller=> "indicator", :action => "index"}, :method => :get %></div>

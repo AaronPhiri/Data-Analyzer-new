@@ -5,9 +5,9 @@
 </style>
   <title>Baobab Data Analyzer</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-	<%= javascript_include_tag "jquery-1.4.2.min", "rails", "highcharts" %>
+	<%= javascript_include_tag "jquery-1.4.2.min", "rails"%>
 
 
 </head>
@@ -15,10 +15,11 @@
 <div id="header">
 	<table>
 		<tr>
-			<td><div class="logo">
-					<%=image_tag ("BaobabHealth.png") %>
-				</div>
-			</td>
+			<td><div class="logo"><%=image_tag ("BaobabHealth.png") %></td> 					
+			<td><div id="loggedas">Logged in as <a class="user active" href="/users">admin</a>
+</div
+			<td><div id="sign"><%= link_to 'Sign Out', 
+{:controller=>"sessions", :action => "destroy"}, :method => :get %></td></div>							
 		</tr>
 	</table>
 </div>

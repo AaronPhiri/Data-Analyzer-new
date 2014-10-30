@@ -1,7 +1,13 @@
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
 
-<script type="text/javascript">
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="/javascripts/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+<%= raise @sampledata.inspect %>
 $(function () {
     $('#container').highcharts({
         title: {
@@ -13,8 +19,7 @@ $(function () {
             x: -20
         },
         xAxis: {
-            categories: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan',
-                'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']
+            
         },
         yAxis: {
             title: {
@@ -35,21 +40,23 @@ $(function () {
             verticalAlign: 'middle',
             borderWidth: 0
         },
-        series: [
-         
+        series: [{     
 									<% @sampledata.keys.each do |encounter_type| %>
-										{
+										
 												name: '<%= encounter_type %>',
-												data : [
-																<% (@sampledata[encounter_type] || []).each do |month| %>
-																	[ '<%= month[0] %>', <%=  month[1] %>],
-																<% end %>
+												data : [  <%@sampledata.each do |records|%>
+                ['<%=records.name%>', <%=records.count%>],
+      					<% end %>
 															]
-										},
-									<% end %>
-      					]
+										,
+									
+      					}]
     });
 });
-</script>
+		</script>
+
+
+
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
 

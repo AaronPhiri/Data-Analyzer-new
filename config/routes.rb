@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 		get 'reader' => :reader
 		get 'pie' => :piechart
 		get 'line' => :line
+		
 	end 
 	controller :encountertype do
 		get 'viewnow' => :index
@@ -47,6 +48,8 @@ Rails.application.routes.draw do
 	get "sessions/destroy"
 	
 	resources :indicators
+
+		
   #match ':controller(/:action(/:id))',:via=>[:get,:post]
   # get 'sessions/new'
   # The priority is based upon order of creation: first created -> highest priority.

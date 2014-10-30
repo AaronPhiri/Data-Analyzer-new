@@ -13,8 +13,22 @@
  *= require_tree .
  *= require_self
  */
+#loggedas{
+	position: relative;
+	left: 450px;
+	top: 17px;
+}
+#head{
+	position: relative;
+	top: 1px;
+}
+#sign{
+	position: relative;
+	left: 600px;
+}
+
 body{
-	background-color: #CCCCCC;
+	background-color: white;
 	font-size: 15px;
 	border-bottom:auto;
  	position:relative;
@@ -87,31 +101,86 @@ a{
 	background-color: #F8ECDE;
 	border: 1px solid #F8ECDE;
 	background-image: url('system-users-icon.png');
+	background-size: 100px;
+	height: 180px;
+    margin: 20px 10px;
+    width: 290px;
+	
 }
+
+.glow {
+display: inline-block;
+-webkit-transition-duration: 0.1s;
+transition-duration: 0.1s;
+-webkit-transition-property: box-shadow;
+transition-property: box-shadow;
+-webkit-transform: translateZ(0);
+transform: translateZ(0);
+ text-align:center;
+  width:350px;
+  height:250px;
+  float:left;
+	border-radius: 10px;
+ 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+  margin-bottom: 20px;
+  min-height: 20px;
+  padding: 19px;
+	background-repeat:no-repeat;
+ 	background-position:center;
+	
+}
+.glow:hover, .glow:focus, .glow:active {
+box-shadow: 0 0 9px rgba(0, 0, 0, 0.6);
+border-color: rgba(8, 22, 37, 0.12) rgba(8, 22, 37, 0.14) rgba(8, 22, 37, 0.16);
+}
+
+
 #box2{
 background-color: #CC9752;
 border: 1px solid #BB7365;
 background-image: url('magnify-icon.png');
+background-size: 100px;
+height: 180px;
+    margin: 20px 10px;
+    width: 290px;
 }
 #box3{
 background-color: #F8ECDE;
 border: 1px solid #F8ECDE;
 background-image: url('System-icon.png');
+background-size: 100px;
+height: 180px;
+    margin: 20px 10px;
+    width: 290px;
 }
 #box4{
 background-color: #CC9752;
 border: 1px solid #BB7365;
 background-image: url('mail-icon.png');
+background-size: 100px;
+height: 180px;
+    margin: 20px 10px;
+    width: 290px;
+    
 }
+
 #box5{
 background-color: #F8ECDE;
 border: 1px solid #F8ECDE;
 background-image: url('web-google-sheets-icon.png');
+background-size: 100px;
+height: 180px;
+    margin: 20px 10px;
+    width: 290px;
 }
 #box6{
 background-color: #CC9752;
 border: 1px solid #BB7365;
 background-image: url('maps-icon.png');
+background-size: 100px;
+height: 180px;
+    margin: 20px 10px;
+    width: 290px;
 }
 #box7{
 background-color: #F8ECDE;

@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password:	password
+  password:	root
   host: localhost
   socket: /var/run/mysqld/mysqld.sock
 
@@ -32,9 +32,9 @@ test:
 other_db:
   adapter: mysql2
   encoding: utf8
-  database: demo_dataset
+  database: new_data
   username: root
-  password: password
+  password: root
   host: localhost
   port: 3306
 
